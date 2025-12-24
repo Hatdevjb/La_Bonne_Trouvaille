@@ -1,4 +1,8 @@
+DROP DATABASE IF EXISTS labonnetrouvaille; 
+CREATE DATABASE labonnetrouvaille 
 
+ USE labonnetrouvaille;
+ 
 /*table UTILISATEUR*/
 CREATE TABLE Utilisateur (
    id_utilisateur INT AUTO_INCREMENT,
@@ -27,3 +31,12 @@ CREATE TABLE Photo (
    PRIMARY KEY(id_photo),
    FOREIGN KEY(id_annonce) REFERENCES Annonce(id_annonce)
 );
+
+/* CREATION D'UTILISATEURS POUR  TEST IMPLEMENTATION   */
+INSERT INTO Utilisateur (email, username, mot_de_passe)
+VALUES
+('luc.ture@example.com', 'LucTure', 'Luc76_'),        
+('anne.onyme@example.com', 'AnneOnyme', 'Mdp99'),         
+('sal.lemand@example.com', 'SalLemand', 'Sallemand33D'),       
+('chris.tal@example.com', 'ChrisTal', 'ClairNet321!');        
+
