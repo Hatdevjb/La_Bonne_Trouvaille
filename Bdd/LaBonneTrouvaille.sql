@@ -1,7 +1,6 @@
-DROP DATABASE IF EXISTS labonnetrouvaille; 
-CREATE DATABASE labonnetrouvaille 
-
- USE labonnetrouvaille;
+-- Création de la base de données LaBonneTrouvaille
+CREATE DATABASE IF NOT EXISTS labonnetrouvaille;
+USE labonnetrouvaille;
  
 /*table UTILISATEUR*/
 CREATE TABLE Utilisateur (
