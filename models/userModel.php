@@ -11,6 +11,7 @@
         $password = $config['database']['PASSWORD'];
         $charset = $config['database']['CHARSET'];
 
+        //connexion a la bdd 
        $dsn = "mysql:dbname=" . $dbname . ";host=" . $host . ";charset=" . $charset;
          try {
               $bdd = new PDO($dsn, $username, $password);
@@ -42,7 +43,7 @@
             $bdd = getBdd();
 
             //on prépare la requête de suppression
-            $sql = "DELETE FROM utilisateur WHERE id = :id";
+            $sql = "DELETE FROM utilisateur WHERE id_utilisateur = :id";
             $stmt = $bdd->prepare($sql);
             //execution
             $stmt->execute([':id'=>$id]);
@@ -70,7 +71,7 @@
             $bdd = getBdd();
 
             // On prépare la requête de sélection
-            $sql = "SELECT * FROM utilisateur WHERE id = :id";
+            $sql = "SELECT * FROM utilisateur WHERE id_utilisateur = :id";
             $stmt = $bdd->prepare($sql);
             
             // Execution 
