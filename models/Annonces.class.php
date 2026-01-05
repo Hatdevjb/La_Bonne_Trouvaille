@@ -6,12 +6,22 @@
 
     class Annonces extends ModeleAnnonces {
         
+        /**
+         * Renvoie la liste des annonces
+         * 
+         *
+         */ 
         public function getlistAnnonces() {
             $sql = 'SELECT * FROM annonces ORDER BY id DESC';
             $annonces = $this->executerRequete($sql);
             return $annonces;
         }
 
+        /**
+         * Renvoie une annonce spécifique
+         * 
+         * @param int $idAnnonce L'identifiant de l'annonce
+         */ 
         public function getAnnonceById($idAnnonce) {
             $sql = 'SELECT * FROM annonces WHERE id = ?';
             $annonce = $this->executerRequete($sql, array($idAnnonce));
