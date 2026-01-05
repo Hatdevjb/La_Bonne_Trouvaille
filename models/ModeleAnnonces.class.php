@@ -1,7 +1,8 @@
 <?php
-
+require_once 'models/ModeleAnnoncesException.class.php';
+require_once 'param2.ini';
 /**
- * Classe abstraite Modèle.
+ * Classe abstraite Modèle.Annonces
  * Centralise les services d'accès à une base de données.
  *
  * 
