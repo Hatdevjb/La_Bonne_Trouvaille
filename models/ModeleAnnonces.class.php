@@ -1,13 +1,16 @@
 <?php
+
 require_once 'models/ModeleAnnoncesException.class.php';
 require_once 'param2.ini';
+
 /**
- * Classe abstraite Modèle.Annonces
+ * Classe abstraite ModeleAnnonces
  * Centralise les services d'accès à une base de données.
  *
+ * execute les fonctions de connexion et d'exécution des requêtes SQL
  * 
  */
-abstract class Modele {
+abstract class ModeleAnnonces {
 
     /** Objet PDO d'accès à la BD */
     private $bdd;
@@ -36,13 +39,21 @@ abstract class Modele {
      * @return PDO L'objet PDO de connexion à la BDD
      */
     private function getBdd() {
-        if ($this->bdd == null) {
-            // Création de la connexion
-            $this->bdd = new PDO('mysql:host=localhost;dbname=monblog;charset=utf8',
-                    'root', '',
-                    array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+            $file_ini = "param.ini";
+        if (!file_exists($file_ini)) 
+            throw new ModeleAnnoncesException('Le fichier de paramètre est absent.');
+
+        $tParam = parse_ini_file($file_ini, true);
+        extract($tParam['BDD']);
+
+        $dsn = "mysql:host=$DBHOST;port=$DBPORT;dbname=$DBNAME;charset=$DBCHAR";
+        try {
+            $bdd = new PDO($dsn, $DBUSER,
+                    $DBPASS, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+            return $bdd;
+        } catch(PDOException $e) {
+            throw new ModeleAnnoncesException('Connexion à la BDD impossible.');
         }
-        return $this->bdd;
     }
 
 }
