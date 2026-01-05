@@ -6,13 +6,13 @@
 
     class Annonces extends ModeleAnnonces {
         
-        public function getAnnoncesById() {
+        public function getlistAnnonces() {
             $sql = 'SELECT * FROM annonces ORDER BY id DESC';
             $annonces = $this->executerRequete($sql);
             return $annonces;
         }
 
-        public function getAnnonce($idAnnonce) {
+        public function getAnnonceById($idAnnonce) {
             $sql = 'SELECT * FROM annonces WHERE id = ?';
             $annonce = $this->executerRequete($sql, array($idAnnonce));
             if ($annonce->rowCount() == 1)
