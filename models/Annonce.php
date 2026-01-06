@@ -12,7 +12,7 @@
          *
          */ 
         public function getlistAnnonces() {
-            $sql = 'SELECT * FROM annonce ORDER BY id DESC';
+            $sql = 'SELECT * FROM annonce';
             $annonces = $this->executerRequete($sql);
             return $annonces;
         }
