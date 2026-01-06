@@ -22,6 +22,6 @@
         </p>
     <?php endif; ?>
     <p class="lienInscription">
-        Pas encore de compte ? <a href="index.php?action=inscription">S'inscrire</a>
+        Pas encore de compte ?  <a href="index.php?action=inscription"> S'inscrire</a>
     </p>
 </div>

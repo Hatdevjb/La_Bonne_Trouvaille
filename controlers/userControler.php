@@ -10,7 +10,7 @@ require_once 'models/userModel.php';
 
         // On verifie que le formulaire est soumis
         if (isset($_POST['email'])) {
-            // Recupere l'utilisateur par son email
+            // Verifier l'utilisateur par son email
             $user = getUserByEmail($_POST['email']);
 
             // Verification du mot de passe
@@ -21,6 +21,8 @@ require_once 'models/userModel.php';
 
                     // Stockage de l'utilisateur dans la session active
                     $_SESSION['user'] = $user; 
+                    // if()//nom utilisateur admin)
+                    //     //redirection vers la page admin
                     header('Location: index.php?action=profil');
                     exit();
                 } else {
@@ -112,7 +114,7 @@ function profil(){
         }
 
         ob_start(); //enregistrement
-        
+
         //chargement de la vue d'inscription
         require 'vues/vueInscription.php';
         //récupération du contenu généré
