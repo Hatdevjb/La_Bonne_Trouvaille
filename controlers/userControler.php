@@ -2,66 +2,68 @@
 // On charge le model 
 require_once 'models/userModel.php';
 
-// On recupere les données du formulaire
-function connexion() {
-    // Initialisation de la variable $contenu et $message
-    $contenu = ""; 
-    $message = null; 
+//==========CONNEXION ==========//
+    function connexion() {
+        // Initialisation de la variable $contenu et $message
+        $contenu = ""; 
+        $message = null; 
 
-    // On verifie que le formulaire est soumis
-    if (isset($_POST['email'])) {
-        // Recupere l'utilisateur par son email
-        $user = getUserByEmail($_POST['email']);
+        // On verifie que le formulaire est soumis
+        if (isset($_POST['email'])) {
+            // Recupere l'utilisateur par son email
+            $user = getUserByEmail($_POST['email']);
 
-        // Verification du mot de passe
-        if ($user) { 
-            if ($_POST['password'] === $user['mot_de_passe']) {
-                // Si la connexion est ok alors on demarre une session
-                session_start();
+            // Verification du mot de passe
+            if ($user) { 
+                if ($_POST['password'] === $user['mot_de_passe']) {
+                    // Si la connexion est ok alors on demarre une session
+                    session_start();
 
-                // Stockage de l'utilisateur dans la session active
-                $_SESSION['user'] = $user; 
-                header('Location: index.php?action=profil');
-                exit();
+                    // Stockage de l'utilisateur dans la session active
+                    $_SESSION['user'] = $user; 
+                    header('Location: index.php?action=profil');
+                    exit();
+                } else {
+                    // Erreur de connexion
+                    $message = "Email/ Mot de passe incorrect";
+                }
             } else {
-                // Erreur de connexion
+                // Cas où l'email n'existe pas
                 $message = "Email/ Mot de passe incorrect";
             }
-        } else {
-            // Cas où l'email n'existe pas
-            $message = "Email/ Mot de passe incorrect";
         }
+
+        // Affichage du formulaire
+        ob_start();
+
+        // chargement la vue de la connexion 
+        require 'vues/vueConnexion.php';
+
+        // Récupération du contenu généré
+        $contenu = ob_get_clean();
+
+        // Chargement du gabarie pour la strucuture de la page
+        require 'vues/gabarie.php';
     }
 
-    // Affichage du formulaire
-    ob_start();
+//==========DECONNEXION ==========//
+    function deconnexion(){
+        //demarre la session
+        session_start();
 
-    // chargement la vue de la connexion 
-    require 'vues/vueConnexion.php';
+        //vidage des varibales de session
+        $_SESSION = array(); 
 
-    // Récupération du contenu généré
-    $contenu = ob_get_clean();
+        //destruction de la session
+        session_destroy();
 
-    // Chargement du gabarie pour la strucuture de la page
-    require 'vues/gabarie.php';
-}
+        //redirection vers la page de connexion
+        header('Location: index.php?action=connexion');
+        exit();// arret du script 
 
-function deconnexion(){
-    //demarre la session
-    session_start();
+    }
 
-    //vidage des varibales de session
-    $_SESSION = array(); 
-
-    //destruction de la session
-    session_destroy();
-    
-    //redirection vers la page de connexion
-    header('Location: index.php?action=connexion');
-    exit();// arret du script 
-
-}
-
+//==========PROFIL ==========//
 function profil(){
 
     //verifie si l'utilisateur est connecté
@@ -83,3 +85,34 @@ function profil(){
         header('Location: index.php?action=connexion'); // redirection vers la page de connexion
     }
 }
+
+//==========INSCRIPTION ==========//
+    function inscription(){
+
+        // Initialisation de la variable $contenu et $message
+        $contenu= "";
+        $message = null;
+
+        if(isset($_POST['email']) && isset($_POST['username']) && isset($_POST['password'])){
+            //verificatio n si l'email existe deja
+            $ifExists = getUserByEmail($_POST['email']); 
+
+            if($ifExists){
+                $message ="L'email est déja pris, veuillez en choisir un autre.";
+
+            }else {
+                //creation de l'utilisateur 
+                creerUser($_POST['email'], $_POST['username'], $_POST['password']);
+
+                //renvoie vers la page de connexion
+                header('Location: index.php?action=connexion');
+                exit(); //arret du script
+                
+            }
+            
+
+        }
+
+       
+
+    }

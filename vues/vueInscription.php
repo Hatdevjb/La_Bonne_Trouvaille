@@ -3,15 +3,10 @@
     <form action="index.php?action=inscription" method="POST">
 
         <div class="groupe-champ">
-            <label>Votre nom</label>
-            <input type="text" name="nom" placeholder="Entrez votre nom" required>
+                <label>Votre nom d'utilisateur</label>
+                <input type="text" name="username" placeholder="Entrez votre nom d'utilisateur" required>
         </div>
-
-        <div class="groupe-champ">
-            <label>Votre prénom</label>
-            <input type="text" name="prenom" placeholder="Entrez votre prénom" required>
-        </div>
-
+        
         <div class="groupe-champ">
             <label>Votre email</label>
             <input type="email" name="email" placeholder="Entrez votre email" required>
