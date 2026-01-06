@@ -2,7 +2,7 @@
 session_start();
 // On importation du contrôleur
 require_once 'controlers/userControler.php';
-
+require_once 'models/userModel.php';
 // action a realiser
 $action = 'connexion'; 
 // On verifie si une action est demandée dans l'URL
@@ -22,10 +22,14 @@ if (isset($_GET['action'])) {
         deconnexion(); // Appel de la fonction deconnexion dans userControler.php
     }
     elseif ($action === 'inscription') {
-        inscription(); // Appel de la fonction inscription (a creer) dans userControler.php
-    }
-    else {
-        // Si l'action n'existe pas ou n'est pas précisée (le "par défaut")
-        // On renvoie vers la connexion
+
+        inscription(); // Appel de la fonction inscription dans userControler.php
+
+    }elseif ($action === 'admin') {
+        admin(); // Appel de la fonction admin 
+    
+    }else {
+        // Si l'action n'existe pas ou n'est pas précisée (le "par défaut"), a changer une fois que la page d'accueil et annonces sont faites
+        // On renvoie vers la connexion 
         connexion();
     }

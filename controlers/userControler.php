@@ -3,51 +3,56 @@
 require_once 'models/userModel.php';
 
 //==========CONNEXION ==========//
-    function connexion() {
-        // Initialisation de la variable $contenu et $message
-        $contenu = ""; 
-        $message = null; 
+function connexion() {
+    // Initialisation de la variable $contenu et $message
+    $contenu = ""; 
+    $message = null; 
 
-        // On verifie que le formulaire est soumis
-        if (isset($_POST['email'])) {
-            // Verifier l'utilisateur par son email
-            $user = getUserByEmail($_POST['email']);
+    // On verifie que le formulaire est soumis
+    if (isset($_POST['email'])) {
+        // Verifier l'utilisateur par son email
+        $user = getUserByEmail($_POST['email']);
 
-            // Verification du mot de passe
-            if ($user) { 
-                if ($_POST['password'] === $user['mot_de_passe']) {
-                    // Si la connexion est ok alors on demarre une session
-                    session_start();
+        // Verification du mot de passe
+        if ($user) { 
+            if ($_POST['password'] === $user['mot_de_passe']) {
+                // Si la connexion est ok alors on demarre une session
+                session_start();
 
-                    // Stockage de l'utilisateur dans la session active
-                    $_SESSION['user'] = $user; 
-                    // if()//nom utilisateur admin)
-                    //     //redirection vers la page admin
-                    header('Location: index.php?action=profil');
-                    exit();
+                // Stockage de l'utilisateur dans la session active
+                $_SESSION['user'] = $user; 
+                
+                // if()//nom utilisateur admin)
+                // //redirection vers la page admin
+                if ($_SESSION['user']['email'] === 'admin@lbt.fr') {
+                    header('Location: index.php?action=admin');
                 } else {
-                    // Erreur de connexion
-                    $message = "Email/ Mot de passe incorrect";
+                    header('Location: index.php?action=profil');
                 }
+                exit(); // On arrête le script après la redirection
+
             } else {
-                // Cas où l'email n'existe pas
+                // Erreur de connexion
                 $message = "Email/ Mot de passe incorrect";
             }
+        } else {
+            // Cas où l'email n'existe pas
+            $message = "Email/ Mot de passe incorrect";
         }
-
-        // Affichage du formulaire
-        ob_start();
-
-        // chargement la vue de la connexion 
-        require 'vues/vueConnexion.php';
-
-        // Récupération du contenu généré
-        $contenu = ob_get_clean();
-
-        // Chargement du gabarie pour la strucuture de la page
-        require 'vues/gabarie.php';
     }
 
+    // Affichage du formulaire
+    ob_start();
+
+    // chargement la vue de la connexion 
+    require 'vues/vueConnexion.php';
+
+    // Récupération du contenu généré
+    $contenu = ob_get_clean();
+
+    // Chargement du gabarie pour la strucuture de la page
+    require 'vues/gabarie.php';
+}
 //==========DECONNEXION ==========//
     function deconnexion(){
 
@@ -91,8 +96,14 @@ function profil(){
         $message = null;
 
         if(isset($_POST['email']) && isset($_POST['username']) && isset($_POST['password'])){
-            //verificatio n si l'email existe deja
-            $ifExists = getUserByEmail($_POST['email']); 
+
+            //verification si l'username ou l'email entré est "admin" 
+            if($_POST['email'] == "admin" || $_POST['username'] == "admin") {
+       
+            $message ="Le nom d'utilisateur ou l'email 'admin' est réservé, veuillez en choisir un autre.";
+            }else{  
+                //verification si l'email existe deja
+             $ifExists = getUserByEmail($_POST['email']); 
 
             if($ifExists){
                 $message ="L'email est déja pris, veuillez en choisir un autre.";
@@ -107,6 +118,7 @@ function profil(){
 
             }
         }
+    }
 
         ob_start(); //enregistrement
 
@@ -118,3 +130,35 @@ function profil(){
         //chargement du gabarie pour la structure de la page
         require 'vues/gabarie.php';
     }
+
+    //==========ADMIN===========
+
+    function admin(){
+        // Verification si l'utilisateur est admin
+        if(!isset($_SESSION['user']) || $_SESSION['user']['email'] !== 'admin@lbt.fr'){
+        header('Location:index.php');
+        exit();
+    }
+
+    // connection à la bdd
+    $connexion = getBdd();
+
+    if (isset($_GET['supprimer_id'])){
+        //appel de la fonction de suppression
+        supprimerUser($_GET['supprimer_id']);
+
+        //redirection vers la page admin
+        header('Location:index.php?action=admin');
+        
+        exit(); // arret du script
+    }
+
+    // Récupération de la liste des utilisateurs
+    $users = getAllUsers();
+    
+    // Affichage de la vue admin
+    ob_start();
+    require 'vues/vueAdmin.php'; //chargement de la vue admin
+    $contenu = ob_get_clean(); //récupération du contenu généré
+    require 'vues/gabarie.php'; // chargement du gabarie pour la structure de la page
+}

@@ -82,4 +82,18 @@
         }
 
 
+    //recuperer tout les utilisateurs
+        function getAllUsers(){
+            //on se connecte à la bdd
+            $bdd = getBdd();
+
+            //on prépare la requête de sélection
+            $sql = "SELECT * FROM utilisateur";
+            
+            $stmt = $bdd->prepare($sql);// prepare de la requete
+            $stmt->execute(); //execution
+            
+            //récupération de tous les utilisateurs
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
 ?>

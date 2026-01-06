@@ -127,3 +127,57 @@ main {
         font-size: 20px !important;
         color: #002f34;
     }
+
+/* =================== Style de la page admin =====================*/
+.admin-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.admin-header h2 {
+    color: #EC5A13;
+    font-size: 28px;
+    margin-bottom: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.admin-header p {
+    font-size: 16px;
+    color: #000000;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+/* Force le bloc blanc à s'adapter au tableau */
+.connexion {
+    width: 300px;            /* Ajuste selon tes autres pages */
+    max-width: 900px;      /* Pour éviter qu'il soit trop large sur grand écran */
+    margin: 0 auto;        /* Centre le bloc blanc */
+    padding: 20px;
+    overflow-x: auto;       
+}
+
+/* Style du tableau pour qu'il reste dans le bloc */
+.table-admin {
+    width: 100%;           /* Occupe toute la largeur du bloc blanc */
+    border-collapse: collapse;
+}
+
+.table-admin th {
+    text-align: left;
+    color: #888;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    padding: 15px 5px;
+    border-bottom: 1px solid #eee;
+}
+
+.table-admin td {
+    padding: 15px 5px;
+    border-bottom: 1px solid #f9f9f9;
+    font-size: 0.9rem;
+    font-weight: bold;      /* Pour l'aspect visuel de ton image */
+}
+
+.lien-supprimer {
+    color: blue;            /* Bleu comme sur ton image */
+    text-decoration: underline;
+    font-weight: bold;
+}
