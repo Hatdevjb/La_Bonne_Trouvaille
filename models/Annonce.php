@@ -12,7 +12,7 @@
          *
          */ 
         public function getlistAnnonces() {
-            $sql = 'SELECT * FROM annonces ORDER BY id DESC';
+            $sql = 'SELECT * FROM annonce ORDER BY id DESC';
             $annonces = $this->executerRequete($sql);
             return $annonces;
         }
@@ -23,7 +23,7 @@
          * @param int $idAnnonce L'identifiant de l'annonce
          */ 
         public function getAnnonceById($idAnnonce) {
-            $sql = 'SELECT * FROM annonces WHERE id = ?';
+            $sql = 'SELECT * FROM annonce WHERE id = ?';
             $annonce = $this->executerRequete($sql, array($idAnnonce));
             if ($annonce->rowCount() == 1)
                 return $annonce->fetch();  // Accès à la première ligne de résultat

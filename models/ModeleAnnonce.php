@@ -1,7 +1,7 @@
 <?php
 
     require_once 'models/ModeleAnnonceException.php';
-    require_once 'param2.ini';
+    
 
     /**
      * Classe abstraite ModeleAnnonces
@@ -39,7 +39,7 @@
          * @return PDO L'objet PDO de connexion à la BDD
          */
         private function getBdd() {
-            
+
             if ($this->bdd == null) {
                     $file_ini = "param2.ini";
                 if (!file_exists($file_ini)) 
@@ -51,7 +51,7 @@
                 $dsn = "mysql:host=$DBHOST;port=$DBPORT;dbname=$DBNAME;charset=$DBCHAR";
 
                 try {
-                    $this->$bdd = new PDO($dsn, $DBUSER,
+                    $this->bdd = new PDO($dsn, $DBUSER,
                             $DBPASS, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
                 } catch(PDOException $e) {
                     throw new ModeleAnnonceException('Connexion à la BDD impossible.');
