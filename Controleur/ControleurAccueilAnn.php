@@ -1,6 +1,6 @@
 <?php
 
-    require_once 'models/MgrAnnonce.php';
+    require_once 'models/ModeleAnnonce.php';
     require_once 'vues/Vue.php';
 
     class ControleurAccueilAnn{
