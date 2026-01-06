@@ -1,10 +1,10 @@
 <?php
 
-    require_once 'modele/ModeleAnnoces.class.php';
-    require_once 'modele/ModeleAnnocesException.class.php';
+    require_once 'modele/ModeleAnnoce.class.php';
+    require_once 'modele/ModeleAnnoceException.class.php';
 
 
-    class Annonces extends ModeleAnnonces {
+    class Annonce extends ModeleAnnonce {
         
         /**
          * Renvoie la liste des annonces
@@ -28,6 +28,6 @@
             if ($annonce->rowCount() == 1)
                 return $annonce->fetch();  // Accès à la première ligne de résultat
             else
-                throw new ModeleAnnoncesException("Aucune annonce ne correspond à l'identifiant '$idAnnonce'");
+                throw new ModeleAnnonceException("Aucune annonce ne correspond à l'identifiant '$idAnnonce'");
         }
     }

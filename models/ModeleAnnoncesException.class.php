@@ -1,2 +1,2 @@
 <?php
-    class ModeleAnnoncesException extends Exception {}
+    class ModeleAnnonceException extends Exception {}
