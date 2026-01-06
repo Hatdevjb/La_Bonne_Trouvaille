@@ -2,14 +2,14 @@
     
     function getBdd(){
         // Chargement des paramètres depuis le fichier param.ini
-        $config = parse_ini_file(__DIR__ . '/../param.ini', true);
+        $param = parse_ini_file(__DIR__ . '/../param.ini', true);
 
         // Récupération des paramètres de connexion
-        $host = $config['database']['HOST'];
-        $dbname = $config['database']['DBNAME'];
-        $username = $config['database']['USERNAME'];
-        $password = $config['database']['PASSWORD'];
-        $charset = $config['database']['CHARSET'];
+        $host = $param['database']['HOST'];
+        $dbname = $param['database']['DBNAME'];
+        $username = $param['database']['USERNAME'];
+        $password = $['database']['PASSWORD'];
+        $charset = $param['database']['CHARSET'];
 
         //connexion a la bdd 
        $dsn = "mysql:dbname=" . $dbname . ";host=" . $host . ";charset=" . $charset;

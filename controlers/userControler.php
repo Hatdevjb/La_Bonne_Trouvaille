@@ -1,32 +1,42 @@
 <?php 
+// On charge le model 
 require_once 'models/userModel.php';
 
-function connexion(){
+// On recupere les données du formulaire
+function connexion() {
+    // Initialisation de la variable $contenu et $message
     $contenu = ""; 
-    
-    // Soumission du formulaire
-    if (isset($_POST['email'])){
-        //recupere l'utilisateur par son email
+    $message = ""; 
+
+    // On verifie que le formulaire est soumis
+    if (isset($_POST['email'])) {
+        // Recupere l'utilisateur par son email
         $user = getUserByEmail($_POST['email']);
 
-        //verifie le mot de passe
-        if ($user && $_POST['password'] === $user['mot_de_passe']){
+        // Verification du mot de passe
+        if ($user) { 
+            if ($_POST['password'] === $user['mot_de_passe']) {
+                // Si la connexion est ok alors on demarre une session
+                session_start();
 
-            // si la connexion est ok alors on demarre une session
-           session_start();
-
-           $_SESSION['user'] = $user; // stockagge de l'utilisateur dans la session active
-           header('Location: index.php?action=profil');
-           exit();
+                // Stockage de l'utilisateur dans la session active
+                $_SESSION['user'] = $user; 
+                header('Location: index.php?action=profil');
+                exit();
+            } else {
+                // Erreur de connexion
+                $message = "Email/ Mot de passe incorrect";
+            }
         } else {
-            //erreur de connexion
-            $erreur = 'Email/ Mot de passe incorrect';
+            // Cas où l'email n'existe pas
+            $message = "Email/ Mot de passe incorrect";
         }
     }
 
     // Affichage du formulaire
     ob_start();
-    // chargement la vue
+
+    // chargement la vue de la connexion 
     require 'vues/vueConnexion.php';
 
     // Récupération du contenu généré
@@ -54,6 +64,6 @@ function profil(){
         $contenu = ob_get_clean(); 
         require 'vues/gabarie.php';
     } else {
-        header('Location: index.php?action=connexion');
+        header('Location: index.php?action=connexion'); // redirection vers la page de connexion
     }
 }
