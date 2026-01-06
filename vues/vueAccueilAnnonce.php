@@ -7,7 +7,7 @@
             <a href="<?= "index.php?action=annonce&id=" . $annonce['id_annonce'] ?>">
                 <h1 class="titreAnnonce"><?= $annonce['titre'] ?></h1>
             </a>
-            <time><?= $annonce['date'] ?></time>
+            <time><?= $annonce['date_publication'] ?></time>
         </header>
         <p><?= $annonce['description'] ?></p>
     </article>
