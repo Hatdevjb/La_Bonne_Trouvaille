@@ -24,6 +24,11 @@ main {
 
     }
 
+    .lienInscription {
+        justify-content: center;
+        display: flex;
+        margin-bottom: 20px;
+    }
 /* ======================= champs ============================= */
     .groupe-champ {
         margin-bottom: 15px;
@@ -59,5 +64,22 @@ main {
         transition: background-color 0.2s;
     }
     .boutonConnexion:hover {
+        background-color: #d14d0fb2; /* Couleur légèrement plus foncée au survol */
+    }
+
+    /*=============Boutton inscription ==================*/
+    .boutonInscription {
+        background-color:#EC5A13;
+        color: white;
+        width : 100%; /* Le bouton prend toute la largeur */
+        padding: 12px; /* Augmentation du padding pour un bouton plus grand */
+        border: none; 
+        border-radius: 13px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.2s;
+    }
+    .boutonInscription:hover {
         background-color: #d14d0fb2; /* Couleur légèrement plus foncée au survol */
     }

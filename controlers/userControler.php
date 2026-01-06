@@ -107,12 +107,17 @@ function profil(){
                 //renvoie vers la page de connexion
                 header('Location: index.php?action=connexion');
                 exit(); //arret du script
-                
-            }
-            
 
+            }
         }
 
-       
+        ob_start(); //enregistrement
+        
+        //chargement de la vue d'inscription
+        require 'vues/vueInscription.php';
+        //récupération du contenu généré
+        $contenu = ob_get_clean();
 
+        //chargement du gabarie pour la structure de la page
+        require 'vues/gabarie.php';
     }

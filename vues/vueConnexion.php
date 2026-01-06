@@ -14,11 +14,14 @@
             </div>
             <button type="submit" class="boutonConnexion">Se connecter</button>
         </form>
-        
+
     <?php //gestion message d'erreur 
         if (!empty($message)): ?>
         <p style="color:red;">
             <?php echo $message; ?>
         </p>
     <?php endif; ?>
+    <p class="lienInscription">
+        Pas encore de compte ? <a href="index.php?action=inscription">S'inscrire</a>
+    </p>
 </div>

@@ -6,7 +6,7 @@
                 <label>Votre nom d'utilisateur</label>
                 <input type="text" name="username" placeholder="Entrez votre nom d'utilisateur" required>
         </div>
-        
+
         <div class="groupe-champ">
             <label>Votre email</label>
             <input type="email" name="email" placeholder="Entrez votre email" required>
@@ -18,10 +18,12 @@
         </div>
         <button type="submit" class="boutonInscription">S'inscrire</button>
     </form>
-</div>
+
 
 <?php //gestion message d'erreur 
     if (!empty($message)): ?>
     <p style="color:red;">
         <?php echo $message; ?>
     </p>
+    <?php endif; ?>
+</div>
