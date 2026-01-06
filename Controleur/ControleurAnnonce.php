@@ -10,7 +10,7 @@
         
 
         public function __construct() {
-            $this->annonce = new MgrAnnonce();
+            $this->annonce = new Annonce();
         }
 
         // Affiche les détails sur un annonce

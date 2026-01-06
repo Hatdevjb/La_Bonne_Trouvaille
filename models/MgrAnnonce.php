@@ -1,10 +1,10 @@
 <?php
 
-   
+    require_once 'models/DAO.php';
     require_once 'models/ModeleAnnonceException.php';
 
 
-    class MgrAnnonce {
+    class Annonce extends DAO {
         
         /**
          * Renvoie la liste des annonces

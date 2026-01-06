@@ -8,7 +8,7 @@
         private $annonce;
 
         public function __construct() {
-            $this->annonce = new MgrAnnonce();
+            $this->annonce = new Annonce();
         }
 
     // Affiche la liste de tous les annonces du blog
