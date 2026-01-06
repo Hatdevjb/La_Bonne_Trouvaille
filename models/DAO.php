@@ -6,11 +6,10 @@
     /**
      * Classe abstraite ModeleAnnonces
      * Centralise les services d'accès à une base de données.
-     *
-     *  connexion et d'exécution des requêtes SQL
+     * Connexion et d'exécution des requêtes SQL
      * 
      */
-    abstract class ModeleAnnonce {
+    abstract class DAO {
 
         /** Objet PDO d'accès à la BD */
         private $bdd;

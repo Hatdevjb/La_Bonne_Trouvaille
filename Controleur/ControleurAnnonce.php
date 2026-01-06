@@ -1,7 +1,7 @@
 
 <?php
 
-    require_once 'models/Annonce.php';
+    require_once 'models/MgrAnnonce.php';
     require_once 'vues/Vue.php';
 
     class ControleurAnnonce {
@@ -10,7 +10,7 @@
         
 
         public function __construct() {
-            $this->annonce = new Annonce();
+            $this->annonce = new MgrAnnonce();
         }
 
         // Affiche les détails sur un annonce

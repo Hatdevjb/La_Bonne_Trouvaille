@@ -1,6 +1,6 @@
 <?php
 
-    require_once 'models/Annonce.php';
+    require_once 'models/MgrAnnonce.php';
     require_once 'vues/Vue.php';
 
     class ControleurAccueilAnn{
@@ -8,7 +8,7 @@
         private $annonce;
 
         public function __construct() {
-            $this->annonce = new Annonce();
+            $this->annonce = new MgrAnnonce();
         }
 
     // Affiche la liste de tous les annonces du blog

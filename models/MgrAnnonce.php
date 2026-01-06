@@ -1,10 +1,10 @@
 <?php
 
-    require_once 'models/ModeleAnnonce.php';
+   
     require_once 'models/ModeleAnnonceException.php';
 
 
-    class Annonce extends ModeleAnnonce {
+    class MgrAnnonce {
         
         /**
          * Renvoie la liste des annonces
