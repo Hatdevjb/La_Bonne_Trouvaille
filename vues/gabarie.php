@@ -11,6 +11,7 @@
         <nav>
             <a href="index.php?action=connexion">Connexion</a>
             <a href="index.php?action=profil">Mon Profil</a>
+            <a href="index.php?action=deconnexion">Déconnexion</a>
         </nav>
     </header>
     <main>

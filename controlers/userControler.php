@@ -46,6 +46,22 @@ function connexion() {
     require 'vues/gabarie.php';
 }
 
+function deconnexion(){
+    //demarre la session
+    session_start();
+
+    //vidage des varibales de session
+    $_SESSION = array(); 
+
+    //destruction de la session
+    session_destroy();
+    
+    //redirection vers la page de connexion
+    header('Location: index.php?action=connexion');
+    exit();// arret du script 
+
+}
+
 function profil(){
 
     //verifie si l'utilisateur est connecté
