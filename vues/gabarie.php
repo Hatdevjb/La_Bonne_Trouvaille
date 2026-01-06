@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>La Bonne Trouvaille</title>
-    <link rel="stylesheet" href="style.css"> </head>
+    <link rel="stylesheet" href="css/style.css"> </head>
 <body>
 
     <header>

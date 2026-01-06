@@ -1,0 +1,60 @@
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh; /* Hauteur de la zone principale */
+}
+
+/* zone blanche de connexion */
+.connexion {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    width: 300px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.connexion h2{
+    color: #EC5A13;
+    margin-bottom: 20px;
+    font-size: 30px;
+    justify-content: center;
+    display: flex;
+
+}
+
+/* Espacement des champs */
+.groupe-champ {
+    margin-bottom: 15px;
+}
+
+.groupe-champ label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #000000;
+    font-size: 20px;
+}
+
+.groupe-champ input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #CAD1D9;
+    border-radius: 10px;
+    box-sizing: border-box; 
+}
+
+/* Style du bouton de connexion */
+.boutonConnexion {
+    background-color:#EC5A13;
+    color: white;
+    width : 100%; /* Le bouton prend toute la largeur */
+    padding: 12px; /* Augmentation du padding pour un bouton plus grand */
+    border: none; 
+    border-radius: 13px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
