@@ -1,5 +1,17 @@
-<h1>Mon Profil</h1><br>
-<p>Bienvenue, <?php echo $user['username']; ?></p><br>
-<p>Email : <?php echo $user['email']; ?></p>
+<div class="connexion">
+    <h2>Mon Profil</h2>
+    
+    <div class="groupe-info">
+        <label class="user">Nom d'utilisateur</label>
+        <p><?php echo htmlspecialchars($_SESSION['user']['username']); ?></p>
+    </div>
 
-<a href="index.php?action=modifier">Modifier mon profil</a>
+    <div class="groupe-info">
+        <label class="email">Adresse email</label>
+        <p><?php echo htmlspecialchars($_SESSION['user']['email']); ?></p>
+    </div>
+
+    <hr> <a href="index.php?action=deconnexion" class="lienDeconnexion">
+        Se déconnecter
+    </a>
+</div>

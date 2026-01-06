@@ -1,4 +1,5 @@
 <?php
+session_start();
 // On importation du contrôleur
 require_once 'controlers/userControler.php';
 

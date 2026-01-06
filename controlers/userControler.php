@@ -50,8 +50,6 @@ require_once 'models/userModel.php';
 
 //==========DECONNEXION ==========//
     function deconnexion(){
-        //demarre la session
-        session_start();
 
         //vidage des varibales de session
         $_SESSION = array(); 
@@ -67,9 +65,6 @@ require_once 'models/userModel.php';
 
 //==========PROFIL ==========//
 function profil(){
-
-    //verifie si l'utilisateur est connecté
-    session_start();
 
     //si l'utlilisateur est connecté alors on affiche son profil
     if (isset($_SESSION['user'])){

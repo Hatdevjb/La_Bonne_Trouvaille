@@ -83,3 +83,47 @@ main {
     .boutonInscription:hover {
         background-color: #d14d0fb2; /* Couleur légèrement plus foncée au survol */
     }
+/* =================== Style de la page profil =====================*/
+    /* Style des infos du profil */
+    .groupe-info {
+        margin-bottom: 20px;
+        font-size: 30px;
+    }
+
+    .groupe-info label {
+        display: block;
+        color: #767676; /* Gris pour le label */
+        font-size: 20px !important;
+        margin-bottom: 5px;
+    }
+
+    .groupe-info p {
+        margin: 0;
+        font-size: 18px;
+        font-weight: bold;
+        color: #002f34;
+    }
+
+    hr {
+        border: 0;
+        border-top: 1px solid #CAD1D9;
+        margin: 20px 0;
+    }
+
+    /* Bouton de déconnexion simple */
+    .lienDeconnexion {
+        display: block;
+        text-align: center;
+        background-color: #f4f6f7;
+        color: #D32F2F;
+        padding: 10px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: bold;
+        border: 1px solid #D32F2F;
+    }
+
+    label .email {
+        font-size: 20px !important;
+        color: #002f34;
+    }
