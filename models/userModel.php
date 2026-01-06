@@ -8,7 +8,7 @@
         $host = $param['database']['HOST'];
         $dbname = $param['database']['DBNAME'];
         $username = $param['database']['USERNAME'];
-        $password = $['database']['PASSWORD'];
+        $password = $param['database']['PASSWORD'];
         $charset = $param['database']['CHARSET'];
 
         //connexion a la bdd 

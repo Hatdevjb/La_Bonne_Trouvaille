@@ -6,7 +6,7 @@ require_once 'models/userModel.php';
 function connexion() {
     // Initialisation de la variable $contenu et $message
     $contenu = ""; 
-    $message = ""; 
+    $message = null; 
 
     // On verifie que le formulaire est soumis
     if (isset($_POST['email'])) {
@@ -42,7 +42,7 @@ function connexion() {
     // Récupération du contenu généré
     $contenu = ob_get_clean();
 
-    // Chargement du gabarie
+    // Chargement du gabarie pour la strucuture de la page
     require 'vues/gabarie.php';
 }
 
