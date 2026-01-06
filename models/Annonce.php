@@ -1,7 +1,7 @@
 <?php
 
-    require_once 'modele/ModeleAnnoce.class.php';
-    require_once 'modele/ModeleAnnoceException.class.php';
+    require_once 'models/ModeleAnnonce.php';
+    require_once 'models/ModeleAnnonceException.php';
 
 
     class Annonce extends ModeleAnnonce {

@@ -1,22 +1,22 @@
 <?php
 
-require_once 'Modele/Annonce.class.php';
-require_once 'Vue/VueAnnonce.php';
+    require_once 'models/Annonce.php';
+    require_once 'vues/Vue.php';
 
-class ControleurAccueilAnn{
+    class ControleurAccueilAnn{
 
-    private $annonce;
+        private $annonce;
 
-    public function __construct() {
-        $this->annonce = new Annonce();
+        public function __construct() {
+            $this->annonce = new Annonce();
+        }
+
+    // Affiche la liste de tous les annonces du blog
+        public function accueilAnn() {
+            $annonces = $this->annonce->getlistAnnonces();
+            $vue = new Vue("AccueilAnnonce");
+            $vue->generer(array('annonces' => $annonces));
+        }
+
     }
-
-// Affiche la liste de tous les annonces du blog
-    public function accueil() {
-        $annonces = $this->annonce->getAnnonces();
-        $vue = new Vue("Accueil");
-        $vue->generer(array('annonces' => $annonces));
-    }
-
-}
 

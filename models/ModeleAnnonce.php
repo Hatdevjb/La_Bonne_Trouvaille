@@ -1,6 +1,6 @@
 <?php
 
-    require_once 'models/ModeleAnnonceException.class.php';
+    require_once 'models/ModeleAnnonceException.php';
     require_once 'param2.ini';
 
     /**
@@ -39,8 +39,9 @@
          * @return PDO L'objet PDO de connexion à la BDD
          */
         private function getBdd() {
+            
             if ($this->bdd == null) {
-                    $file_ini = "param.ini";
+                    $file_ini = "param2.ini";
                 if (!file_exists($file_ini)) 
                     throw new ModeleAnnonceException('Le fichier de paramètre est absent.');
 

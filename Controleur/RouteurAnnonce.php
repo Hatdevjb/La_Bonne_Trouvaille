@@ -2,7 +2,7 @@
 
     require_once 'Controleur/ControleurAnnonce.php';
     require_once 'Controleur/ControleurAccueilAnn.php';
-    require_once 'Vue/VueAnnonces.php';
+    require_once 'vues/Vue.php';
 
     class RouteurAnnonce {
 

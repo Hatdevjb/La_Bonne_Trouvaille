@@ -9,7 +9,7 @@
             </a>
             <time><?= $annonce['date'] ?></time>
         </header>
-        <p><?= $annonce['contenu'] ?></p>
+        <p><?= $annonce['description'] ?></p>
     </article>
     <hr />
 <?php endforeach; ?>
