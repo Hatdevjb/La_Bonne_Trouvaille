@@ -28,7 +28,7 @@
                 
                 </ul> 
             </div>
-            <!--  user connection / annonces général / profil / annonce  -->
+            <!--  user bar :  / annonces général / profil / annonce  -->
             <div class="user-bar" style="position: relative;">
                 <div class="user-section">
                     <a href="#" class="user-link">
@@ -48,6 +48,15 @@
         </div>
     </nav>
     <!-- FIN NAVBAR -->
+
+    <!-- CALL TO ACTION -->
+    <section class="call-to-action d-flex align-items-center justify-content-center text-center">
+        <div class="cta-content">
+            <h1 class="cta-title">C'est le moment de déposer une annonce !</h1>
+            <a href="deposer-annonce.html" class="btn btn-primary cta-button">Déposer une annonce</a>
+        </div>
+    </section>
+    <!-- FIN CALL TO ACTION -->
 
     <!-- MAIN -->
         <div id="contenu">
