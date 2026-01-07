@@ -84,48 +84,49 @@ require_once 'models/userModel.php';
         }
     }
 
+
 //==========INSCRIPTION ==========//
-    function inscription(){
+function inscription(){
 
-        // Initialisation de la variable $contenu et $message
-        $contenu = "";
-        $message = null;
+    // Initialisation de la variable $contenu et $message
+    $contenu = "";
+    $message = null;
 
-        if(isset($_POST['email'], $_POST['username'], $_POST['password'])){
+    if(isset($_POST['email'], $_POST['username'], $_POST['password'])){
 
-            // verification si l'username ou l'email entré est "admin" 
-            if(strtolower($_POST['email']) == "admin" || strtolower($_POST['username']) == "admin") {  // on force minuscule pour éviter les contournements avec strtolower
-                $message = "Le nom d'utilisateur ou l'email 'admin' est réservé, veuillez en choisir un autre.";
-            } 
-            // verification si l'email existe deja
-            elseif(getUserByEmail($_POST['email'])){
-                $message = "L'email est déjà pris, veuillez en choisir un autre.";
-            } 
-            else {
-                // On hache le mot de passe avant la création
-                $pass_hache = password_hash($_POST['password'], PASSWORD_DEFAULT);
+        // verification si l'username ou l'email entré est "admin" , dans ce cas on refuse l'inscription
+        if(str_contains(strtolower($_POST['email']), "admin") || str_contains(strtolower($_POST['username']), "admin") || str_contains(strtolower($_POST['email']), "admin")) {  // on force minuscule pour éviter les contournements avec strtolower
+            $message = "Le nom d'utilisateur ou l'email 'admin' est réservé, veuillez en choisir un autre.";
+        } 
+        // verification si l'email existe deja
+        elseif(getUserByEmail($_POST['email'])){
+            $message = "L'email est déjà pris, veuillez en choisir un autre.";
+        } 
+        // AJOUT DU ELSE : On ne crée l'utilisateur QUE si les conditions au-dessus sont fausses
+        else {
+            // On hache le mot de passe avant la création
+            $pass_hache = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-                // creation de l'utilisateur avec le mot de passe haché
-                creerUser($_POST['email'], $_POST['username'], $pass_hache);
+            // creation de l'utilisateur avec le mot de passe haché
+            creerUser($_POST['email'], $_POST['username'], $pass_hache);
 
-                // renvoie vers la page de connexion
-                header('Location: index.php?action=connexion');
-                exit(); // arret du script
-            }
+            // renvoie vers la page de connexion
+            header('Location: index.php?action=connexion');
+            exit(); // arret du script
         }
-
-        ob_start(); // enregistrement
-
-        // chargement de la vue d'inscription
-        require 'vues/vueInscription.php';
-        
-        // récupération du contenu généré
-        $contenu = ob_get_clean();
-
-        // chargement du gabarie pour la structure de la page
-        require 'vues/gabarie.php';
     }
 
+    ob_start(); // enregistrement
+
+    // chargement de la vue d'inscription
+    require 'vues/vueInscription.php';
+    
+    // récupération du contenu généré
+    $contenu = ob_get_clean();
+
+    // chargement du gabarie pour la structure de la page
+    require 'vues/gabarie.php';
+}
 //==========ADMIN===========
     function admin(){
 

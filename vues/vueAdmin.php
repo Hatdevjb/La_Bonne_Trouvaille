@@ -1,6 +1,6 @@
 <div class="admin-header">
     <h2>Menu Admin - Gestion des membres</h2>
-    <p>Bienvenue dans le menu d'administration. Voici la liste des utilisateurs inscrits.</p>
+    <p>Bienvenue dans le menu d'administration. <br> Voici la liste des utilisateurs inscrits.</p>
     <p>Il y a actuellement <strong><?php echo count($users); ?></strong> membres.</p>
 </div>
 
