@@ -14,10 +14,10 @@
             <div class="Annonce-card">
                 <h3 class="annonce-title"><?= $annonce['titre'] ?></h3>    
                 <a href="<?= "index.php?action=annonce&id=" . $annonce['id_annonce'] ?>">
-                    <img src="img/Bureau-en-rotin.jpg" class="Annonce-img" alt="Image de  Bureau"id>
+                    <img src="img/Bureau-en-rotin.jpg" class="Annonce-img" alt="Image de Bureau"id>
                 </a>
                 <div class="Annonce-info">
-                    <p class="annonce-date">Date de publication : <span> <time><?= $annonce['date_publication'] ?></time> </span></p>
+                    <p class="annonce-date">Date de publication : <span> <?= $annonce['date_publication'] ?> </span></p>
                     <p class="annonce-prix">Prix : <span> <?= $annonce['prix'] ?> €</span></p>
                     <p class="annonce-description"> Descriptions : <span> <?= $annonce['description'] ?> </span></p>
                 </div>

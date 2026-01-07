@@ -37,12 +37,12 @@
                     </a>
                 </div>
 
-                <div class="favorites-section">
+                <!-- <div class="favorites-section">
                     <a href="#" class="favorites-link">
                         <i class="fa-solid fa-clipboard-list"></i>
                         <span>Mes Annonces</span>
                     </a>
-                </div>
+                </div> -->
     
             </div>
         </div>
