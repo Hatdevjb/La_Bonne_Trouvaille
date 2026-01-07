@@ -147,7 +147,7 @@ main {
 }
 /* Force le bloc blanc à s'adapter au tableau */
 .connexion {
-    width: 300px;            /* Ajuste selon tes autres pages */
+    width: 300px;            /* Ajustement en fonction des pages  */
     max-width: 900px;      /* Pour éviter qu'il soit trop large sur grand écran */
     margin: 0 auto;        /* Centre le bloc blanc */
     padding: 20px;
@@ -173,11 +173,11 @@ main {
     padding: 15px 5px;
     border-bottom: 1px solid #f9f9f9;
     font-size: 0.9rem;
-    font-weight: bold;      /* Pour l'aspect visuel de ton image */
+    font-weight: bold;      
 }
 
 .lien-supprimer {
-    color: blue;            /* Bleu comme sur ton image */
+    color: blue;            
     text-decoration: underline;
     font-weight: bold;
 }
