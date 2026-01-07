@@ -1,4 +1,4 @@
-<?php $this->titre = "Mon TestClient"; ?>
+<?php $this->titre = "La Bonne Trouvailles"; ?>
 
 <?php foreach ($annonces as $annonce):
     ?>

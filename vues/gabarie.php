@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
          <title><?= $titre ?></title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <link rel="icon" type="images/png" href="./images/logoLBT.png">
+        <link rel="icon" type="image/png" href="./images/logoLBT.png" />
         <link rel="stylesheet" href="contenue/style.css" />
         <script src="https://kit.fontawesome.com/6c5bf009e7.js" crossorigin="anonymous"></script>
 
@@ -60,7 +60,7 @@
     <!-- FOOTER -->
     <footer class="footer">
         <a class="footer-logo" href="index.html">
-            <img src="img/LBT_Big_Logo.png" alt="Logo Big LBT" width="250" height="150">
+            <img src="images/LBT_Big_Logo.png" alt="Logo Big LBT" width="250" height="150">
         </a>
         <p class="Mention">Mention Légal</p>
         <p class="reseaux">Nos reseaux: 
