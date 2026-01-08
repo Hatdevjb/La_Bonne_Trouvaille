@@ -8,8 +8,8 @@
             <h2 class="genre-title">Futur Trouvailles  : </h2>
             <div class="title-line"></div>
         </div>
+        
         <div class="Annonce-cards-container"> 
-
             <?php foreach ($annonces as $annonce):?>
             <div class="Annonce-card">
                 <h3 class="annonce-title"><?= $annonce['titre'] ?></h3>    
