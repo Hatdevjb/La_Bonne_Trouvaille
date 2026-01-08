@@ -12,3 +12,4 @@
            required /><br />
 </form>
 
+<!-- Mal Nommée cette vue devrais etre DetailAnnonce.php -->

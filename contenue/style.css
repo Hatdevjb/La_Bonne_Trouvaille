@@ -243,6 +243,10 @@ html, body {
     transition: var(--transition);
 }
 
+.blur-annonce {
+    filter: blur(10px);
+}
+
 .Annonce-card:hover .Annonce-img {
     transform: scale(1.05);
 }
