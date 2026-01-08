@@ -14,8 +14,9 @@
             <div class="Annonce-card">
                 <h3 class="annonce-title"><?= $annonce['titre'] ?></h3>    
                 <a href="<?= "index.php?action=annonce&id=" . $annonce['id_annonce'] ?>">
-                    <img src="images/ImgAnnonce/Bureau-en-rotin.jpg" class="Annonce-img<?= !$isFirst ? ' blur-annonce' : '' ?>" alt="Image de <?= $annonce['titre'] ?>"id>
+                    <img src="images\ImgAnnonce\default.png" class="Annonce-img<?= !$isFirst ? ' blur-annonce' : '' ?>" alt="Image de <?= $annonce['titre'] ?>"id>
                 </a>
+           
                 <div class="Annonce-info">
                     <p class="annonce-date">Date de publication : <span> <?= $annonce['date_publication'] ?> </span></p>
                     <p class="annonce-prix">Prix : <span> <?= $annonce['prix'] ?> €</span></p>
