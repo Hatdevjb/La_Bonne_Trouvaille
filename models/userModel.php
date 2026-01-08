@@ -96,4 +96,20 @@
             //récupération de tous les utilisateurs
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
-?>
+
+    //modifier un utilisateur
+        function modifierUser($id, $email, $username, $password){
+            //on se connecte à la bdd
+            $bdd = getBdd();
+
+            //on prépare la requête de modification
+            $sql = "UPDATE utilisateur SET email = :email, username = :username, mot_de_passe = :mot_de_passe WHERE id_utilisateur = :id";
+            $stmt = $bdd->prepare($sql);
+            
+            //execution
+            $stmt->execute([':email'=>$email, ':username'=>$username, ':mot_de_passe'=>$password, ':id'=>$id]);
+
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+        }
+        
+
