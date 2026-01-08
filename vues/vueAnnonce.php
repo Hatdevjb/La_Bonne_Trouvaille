@@ -1,3 +1,6 @@
+
+<!-- MAL NOMMEE : cette vue devrais etre DetailAnnonce.php -->
+ 
 <?php $this->titre = "Mon TestClient - " . $annonce['titre']; ?>
 
 <article>
@@ -12,4 +15,3 @@
            required /><br />
 </form>
 
-<!-- Mal Nommée cette vue devrais etre DetailAnnonce.php -->
