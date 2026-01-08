@@ -2,19 +2,16 @@
 
     require_once 'Controleur/ControleurAnnonce.php';
     require_once 'Controleur/ControleurAccueilAnn.php';
-    require_once 'Controleur/CtrlAccueilPhoto.php';
     require_once 'vues/Vue.php';
 
     class RouteurAnnonce {
 
         private $ctrlAccueilAnn;
         private $ctrlAnnonce;
-        private $ctrlAccueilPhoto;
 
         public function __construct() {
             $this->ctrlAccueilAnn = new ControleurAccueilAnn();
             $this->ctrlAnnonce = new ControleurAnnonce();
-            $this->ctrlAccueilPhoto = new ControleurAccueilAnn();
         }
 
         // Route une requête entrante : exécution l'action associée
@@ -33,8 +30,7 @@
                         throw new Exception("Action non valide");
                 }
                 else {  // aucune action définie : affichage de l'AccueilAnnonce
-                    $this->ctrlAccueilAnn->accueilAnn();
-                    $this->ctrlAccueilPhoto->photo($idAnnonce);
+                    $this->ctrlAccueilAnn->AccueilAnn();
                 }
             }
             catch (Exception $e) {
