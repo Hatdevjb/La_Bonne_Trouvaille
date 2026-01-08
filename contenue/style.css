@@ -225,7 +225,6 @@ html, body {
     height: 45px;
     overflow: hidden;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
 }
 
@@ -288,7 +287,6 @@ html, body {
 
 .annonce-description {
     display: -webkit-box;
-    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
     font-size: 12px;
