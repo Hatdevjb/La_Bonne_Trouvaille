@@ -25,6 +25,9 @@ if (isset($_GET['action'])) {
 
         inscription(); // Appel de la fonction inscription dans userControler.php
 
+    }elseif ($action === 'modifier') {
+        modifier(); // Appel de la fonction modifier dans userControler.php
+
     }elseif ($action === 'admin') {
         admin(); // Appel de la fonction admin 
     

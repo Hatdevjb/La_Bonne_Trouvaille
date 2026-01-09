@@ -107,9 +107,8 @@
             $stmt = $bdd->prepare($sql);
             
             //execution
-            $stmt->execute([':email'=>$email, ':username'=>$username, ':mot_de_passe'=>$password, ':id'=>$id]);
+            return $stmt->execute([':email'=>$email, ':username'=>$username, ':mot_de_passe'=>$password, ':id'=>$id]);
 
-            return $stmt->fetch(PDO::FETCH_ASSOC);
         }
         
 

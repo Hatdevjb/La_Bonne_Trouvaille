@@ -161,3 +161,39 @@ function inscription(){
 
         require 'vues/gabarie.php'; // chargement du gabarie pour la structure de la page
     }
+
+    //==========Modifier Profil =========//
+    function modifier(){
+        if(isset($_POST['email'], $_POST['username'], $_POST['password'])){
+
+            //recupèration des informations de l'utilisateur connecté 
+            $id = $_SESSION['user']['id_utilisateur'];
+            $email = $_POST['email'];
+            $username = $_POST['username'];
+            
+            // On hache le mot de passe avant la modification
+            $pass_hache = password_hash($_POST['password'], PASSWORD_DEFAULT);
+
+            //appel de la fonction de modification
+            modifierUser($id, $email, $username, $pass_hache);
+
+            //mise a jour des infos de session en utuilisant les nouvelles valeurs
+            $_SESSION['user']['email'] = $email;
+            $_SESSION['user']['username'] = $username;
+
+            //redirection vers la page profil
+            header('Location: index.php?action=profil');
+            exit(); // arret du script
+
+        }
+        // on affiche le formulaire de modification si pas encore soumis
+        $message = null;
+        ob_start(); // enregstrement
+        //chargement de la vue du profil
+        require 'vues/vuModifier.php';
+        //récupération du contenu généré
+        $contenu = ob_get_clean();
+        require 'vues/gabarie.php';
+    } 
+
+            
