@@ -31,22 +31,26 @@
                 throw new ModeleAnnonceException("Aucune annonce ne correspond à l'identifiant '$idAnnonce'");
         }
         
-        /**
-        * Récupère le chemin de l'image d'une annonce
-        * 
-        * @param int $idAnnonce L'identifiant de l'annonce
-        * @return string Le chemin de l'image ou une image par défaut
-        */
-        // public function getImageAnnonce($idAnnonce) {
-        //     $sql = 'SELECT chemin FROM Photo WHERE id_annonce = ? LIMIT 1';
-        //     $result = $this->executerRequete($sql, array($idAnnonce));
+      /**
+         * Récupère le chemin de l'image d'une annonce
+         * 
+         * @param int $idAnnonce L'identifiant de l'annonce
+         * @return string Le chemin de l'image ou une image par défaut
+         */
+        public function getImageAnnonce($idAnnonce) {
+            $sql = 'SELECT chemin FROM photo WHERE id_annonce = ? LIMIT 1';
+            $result = $this->executerRequete($sql, array($idAnnonce));
             
-        //     if ($result->rowCount() > 0) {
-        //         $photo = $result->fetch();
-        //         return $photo['chemin'];
-        //     } else {
-        //         return 'images/ImgAnnonce/default.png';  // Image par défaut
-        //     }
-        // }
-        
+            if ($result->rowCount() > 0) {
+                $photo = $result->fetch();
+                return $photo['chemin'];
+            } else {
+                return 'default.png';  // Image par défaut
+            }
+        }
+
     }
+
+
+   
+

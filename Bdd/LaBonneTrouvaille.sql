@@ -39,3 +39,7 @@ VALUES
 ('sal.lemand@example.com', 'SalLemand', 'Sallemand33D'),       
 ('chris.tal@example.com', 'ChrisTal', 'ClairNet321!');        
 
+
+
+
+/* avant le mergre faire un pull et importer un seul BDD /* apres le merge faire un pull et importer les 2 BDD */

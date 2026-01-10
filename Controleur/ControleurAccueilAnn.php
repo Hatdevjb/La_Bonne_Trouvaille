@@ -15,11 +15,14 @@
 
     // Affiche la liste de tous les annonces du blog
         public function accueilAnn() {
-            $annonces = $this->annonce->getlistAnnonces();
+            $result = $this->annonce->getlistAnnonces();
+            $annonces = array();
             
-            // Ajoute l'image à chaque annonce
-            // $annonce['id-photo'] = $this->annonce->getImageAnnonce($annonce['id_annonce']);
-            // <?= $annonce['id-photo']?
+            // Traite chaque résultat et ajoute l'image
+            while ($annonce = $result->fetch()) {
+                $annonce['image'] = $this->annonce->getImageAnnonce($annonce['id_annonce']);
+                $annonces[] = $annonce;
+            }
             
             $vue = new Vue("AccueilAnnonce");
             $vue->generer(array('annonces' => $annonces));
