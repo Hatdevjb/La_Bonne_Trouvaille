@@ -292,6 +292,155 @@ html, body {
     font-size: 12px;
 }
 
+
+/* ================================
+   DÉTAIL ANNONCE
+   ================================ */
+
+.detail-annonce-section {
+    min-height: 80vh;
+    background-color: var(--light-bg);
+}
+
+.annonce-detail-card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.annonce-detail-card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.annonce-image-container {
+    max-height: 500px;
+    overflow: hidden;
+    background-color: #e9ecef;
+}
+
+.annonce-detail-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.annonce-detail-titre {
+    font-size: 2rem;
+    color: var(--text-primary);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.annonce-detail-prix {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.annonce-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 1rem;
+}
+
+.annonce-meta {
+    padding: 0.75rem 1rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.annonce-meta small {
+    color: var(--text-secondary);
+}
+
+.description-title {
+    color: var(--text-primary);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.card-text {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
+
+.annonce-actions {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.annonce-actions .btn {
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    transition: var(--transition);
+}
+
+/* ================================
+   AJOUT ANNONCE
+   ================================ */
+
+.ajout-annonce-section {
+    min-height: 60vh;
+    background-color: var(--light-bg);
+}
+
+.ajout-annonce-container {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+.ajout-titre {
+    color: var(--text-primary);
+    font-weight: 700;
+    border-bottom: 3px solid var(--primary-color);
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.formulaire-annonce .form-label {
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+}
+
+.formulaire-annonce .form-control {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 0.75rem;
+    transition: var(--transition);
+    font-size: 1rem;
+}
+
+.formulaire-annonce .form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(236, 90, 19, 0.25);
+}
+
+.formulaire-annonce textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.formulaire-annonce .form-text {
+    display: block;
+    margin-top: 0.5rem;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
 /* ================================
    FOOTER
    ================================ */

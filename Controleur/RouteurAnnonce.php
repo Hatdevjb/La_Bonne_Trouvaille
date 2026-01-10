@@ -26,6 +26,12 @@
                         else
                             throw new Exception("Identifiant de annonce non valide");
                     }
+                    elseif ($_GET['action'] == 'formulaireAjout') {
+                        $this->ctrlAnnonce->formulaireAjout();
+                    }
+                    elseif ($_GET['action'] == 'ajoutAnnonce') {
+                        $this->ctrlAnnonce->ajoutAnnonce();
+                    }
                     else
                         throw new Exception("Action non valide");
                 }

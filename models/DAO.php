@@ -37,7 +37,7 @@
          * 
          * @return PDO L'objet PDO de connexion à la BDD
          */
-        private function getBdd() {
+        protected function getBdd() {
 
             if ($this->bdd == null) {
                     $file_ini = "param2.ini";

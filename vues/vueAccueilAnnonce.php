@@ -4,7 +4,7 @@
     <section class="call-to-action d-flex align-items-center justify-content-center text-center">
         <div class="cta-content">
             <h1 class="cta-title">C'est le moment de déposer une annonce !</h1>
-            <a href="deposer-annonce.html" class="btn btn-primary cta-button">Déposer une annonce</a>
+            <a href="index.php?action=formulaireAjout" class="btn btn-primary cta-button">Déposer une annonce</a>
         </div>
     </section>
     <!-- FIN CALL TO ACTION -->
@@ -24,8 +24,6 @@
                 <a href="<?= "index.php?action=annonce&id=" . $annonce['id_annonce'] ?>">
                     <img src="images\ImgAnnonce\<?= $annonce['image'] ?>" class="Annonce-img<?= !$isFirst ? ' blur-annonce' : '' ?>" alt="Image de <?= $annonce['titre'] ?>"id>
                 </a>
-                 
-                <!-- images\ImgAnnonce\default.png  -->
                
                 <div class="Annonce-info">
                     <p class="annonce-date">Date de publication : <span> <?= $annonce['date_publication'] ?> </span></p>

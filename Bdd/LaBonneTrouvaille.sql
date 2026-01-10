@@ -27,6 +27,7 @@ CREATE TABLE Annonce (
 CREATE TABLE Photo (
    id_photo INT AUTO_INCREMENT,
    id_annonce INT NOT NULL,
+   chemin VARCHAR(100) NOT NULL,
    PRIMARY KEY(id_photo),
    FOREIGN KEY(id_annonce) REFERENCES Annonce(id_annonce)
 );
