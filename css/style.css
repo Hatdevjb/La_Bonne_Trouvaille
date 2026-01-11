@@ -1,163 +1,220 @@
+/* ================================
+   VARIABLES ET RÉINITIALISATION
+   ================================ */
+:root {
+    --primary-color: #EC5A13;
+    --primary-dark: #E55100;
+    --secondary-color: #333333;
+    --light-bg: #F5F5F5;
+    --white: #FFFFFF;
+    --text-primary: #333333;
+    --text-secondary: #666666;
+    --border-color: #E0E0E0;
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    color: var(--text-primary);
+    background-color: var(--light-bg);
+    line-height: 1.6;
+}
 
 main {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 70vh; /* Hauteur de la zone principale */
+    min-height: 70vh; 
 }
 
-/* =================zone blanche de connexion ================*/
-    .connexion {
-        background: #ffffff;
-        padding: 30px;
-        border-radius: 16px;
-        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-        width: 300px;
-        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    }
-    .connexion h2{
-        color: #EC5A13;
-        margin-bottom: 20px;
-        font-size: 30px;
-        justify-content: center;
-        display: flex;
+/* ================================
+   NAVBAR
+   ================================ */
+.navbar {
+    background-color: var(--white) !important;
+    box-shadow: var(--shadow) !important;
+    border-bottom: 1px solid var(--border-color) !important;
+    padding: 10px 0 !important;
+}
 
-    }
+.navbar-brand img {
+    max-height: 100px !important;
+    width: auto !important;
+    transition: var(--transition) !important;
+}
 
-    .lienInscription {
-        justify-content: center;
-        display: flex;
-        margin-bottom: 20px;
-    }
-/* ======================= champs ============================= */
-    .groupe-champ {
-        margin-bottom: 15px;
-    }
+.navbar-brand:hover img {
+    transform: scale(1.05) !important;
+}
 
-    .groupe-champ label {
-        display: block;
-        margin-bottom: 5px;
-        font-weight: bold;
-        color: #000000;
-        font-size: 20px;
-    }
+.navbar-nav {
+    display: flex !important;
+    flex-direction: row !important; 
+    list-style: none !important; 
+    gap: 10px !important;
+    align-items: center !important;
+}
 
-    .groupe-champ input {
-        width: 100%;
-        padding: 12px;
-        border: 1px solid #CAD1D9;
-        border-radius: 10px;
-        box-sizing: border-box; 
-    }
+/* User Bar - Liens icônes vertical */
+.user-link,
+.navbar-nav .nav-link.user-link {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 4px !important;
+    text-decoration: none !important;
+    color: var(--text-primary) !important;
+    transition: var(--transition) !important;
+    padding: 8px 12px !important;
+    border-radius: 8px !important;
+    border-bottom: none !important;
+}
 
-/* =====================Style du bouton de connexion =====================*/
-    .boutonConnexion {
-        background-color:#EC5A13;
-        color: white;
-        width : 100%; /* Le bouton prend toute la largeur */
-        padding: 12px; /* Augmentation du padding pour un bouton plus grand */
-        border: none; 
-        border-radius: 13px;
-        font-size: 16px;
-        font-weight: bold;
-        cursor: pointer;
-        transition: background-color 0.2s;
-    }
-    .boutonConnexion:hover {
-        background-color: #d14d0fb2; /* Couleur légèrement plus foncée au survol */
-    }
+.user-link:hover,
+.navbar-nav .nav-link.user-link:hover {
+    color: var(--primary-color) !important;
+    background-color: rgba(236, 90, 19, 0.05) !important;
+}
 
-    /*=============Boutton inscription ==================*/
-    .boutonInscription {
-        background-color:#EC5A13;
-        color: white;
-        width : 100%; /* Le bouton prend toute la largeur */
-        padding: 12px; /* Augmentation du padding pour un bouton plus grand */
-        border: none; 
-        border-radius: 13px;
-        font-size: 16px;
-        font-weight: bold;
-        cursor: pointer;
-        transition: background-color 0.2s;
-    }
-    .boutonInscription:hover {
-        background-color: #d14d0fb2; /* Couleur légèrement plus foncée au survol */
-    }
-/* =================== Style de la page profil =====================*/
-    /* Style des infos du profil */
-    .groupe-info {
-        margin-bottom: 20px;
-        font-size: 30px;
-    }
+.user-link i,
+.navbar-nav .nav-link.user-link i {
+    font-size: 24px !important;
+    color: var(--primary-color) !important;
+    display: block !important;
+}
 
-    .groupe-info label {
-        display: block;
-        color: #767676; /* Gris pour le label */
-        font-size: 20px !important;
-        margin-bottom: 5px;
-    }
+.user-link span,
+.navbar-nav .nav-link.user-link span {
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    white-space: nowrap !important;
+}
 
-    .groupe-info p {
-        margin: 0;
-        font-size: 18px;
-        font-weight: bold;
-        color: #002f34;
-    }
+/* ================================
+   ZONE BLANCHE DE CONNEXION
+   ================================ */
+.connexion {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    width: 350px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 
-    hr {
-        border: 0;
-        border-top: 1px solid #CAD1D9;
-        margin: 20px 0;
-    }
+.connexion h2 {
+    color: #EC5A13;
+    margin-bottom: 20px;
+    font-size: 30px;
+    justify-content: center;
+    display: flex;
+}
 
-    /* Bouton de déconnexion simple */
-    .lienDeconnexion {
-        display: block;
-        text-align: center;
-        background-color: #f4f6f7;
-        color: #D32F2F;
-        padding: 10px;
-        border-radius: 10px;
-        text-decoration: none;
-        font-weight: bold;
-        border: 1px solid #D32F2F;
-    }
+.lienInscription {
+    justify-content: center;
+    display: flex;
+    margin-bottom: 20px;
+}
 
-    label .email {
-        font-size: 20px !important;
-        color: #002f34;
-    }
+/* ================================
+   CHAMPS FORMULAIRE
+   ================================ */
+.groupe-champ {
+    margin-bottom: 15px;
+}
 
-/* =================== Style de la page admin =====================*/
+.groupe-champ label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #000000;
+    font-size: 20px;
+}
+
+.groupe-champ input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #CAD1D9;
+    border-radius: 10px;
+    box-sizing: border-box; 
+}
+
+/* ================================
+   BOUTONS
+   ================================ */
+.boutonConnexion, .boutonInscription {
+    background-color: #EC5A13;
+    color: white;
+    width : 100%; 
+    padding: 12px; 
+    border: none; 
+    border-radius: 13px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.boutonConnexion:hover, .boutonInscription:hover {
+    background-color: #d14d0f; 
+}
+
+/* ================================
+   STYLE PAGE PROFIL
+   ================================ */
+.groupe-info {
+    margin-bottom: 20px;
+}
+
+.groupe-info label {
+    display: block;
+    color: #767676;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.groupe-info p {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #002f34;
+}
+
+.lienDeconnexion {
+    display: block;
+    text-align: center;
+    background-color: #f4f6f7;
+    color: #D32F2F;
+    padding: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    border: 1px solid #D32F2F;
+}
+
+/* ================================
+   STYLE PAGE ADMIN
+   ================================ */
 .admin-header {
     text-align: center;
     margin-bottom: 30px;
 }
 
 .admin-header h2 {
-    margin-left: 50px;
     color: #EC5A13;
     font-size: 28px;
-    margin-bottom: 10px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-.admin-header p {
-    font-size: 16px;
-    color: #000000;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-/* Force le bloc blanc à s'adapter au tableau */
-.connexion {
-    width: 400px;            /* Ajustement en fonction des pages  */
-    max-width: 900px;      /* Pour éviter qu'il soit trop large sur grand écran */
-    margin: 0 auto;        /* Centre le bloc blanc */
-    padding: 20px;
-    overflow-x: auto;       
 }
 
-/* Style du tableau pour qu'il reste dans le bloc */
 .table-admin {
-    width: 100%;           /* Occupe toute la largeur du bloc blanc */
+    width: 100%;
     border-collapse: collapse;
 }
 
@@ -174,12 +231,60 @@ main {
     padding: 15px 5px;
     border-bottom: 1px solid #f9f9f9;
     font-size: 0.9rem;
-    font-weight: bold;      
-}
-
-.lien-supprimer {
-    color: blue;            
-    text-decoration: underline;
     font-weight: bold;
 }
 
+/* ================================
+   FOOTER
+   ================================ */
+.footer {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.footer-logo img {
+    max-height: 80px;
+    width: auto;
+    margin-bottom: 20px;
+}
+
+.footer p {
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.Mention {
+    margin: 15px 0;
+}
+
+.reseaux {
+    margin: 15px 0;
+}
+
+.reseaux a {
+    color: var(--primary-color);
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 18px;
+    transition: var(--transition);
+}
+
+.reseaux a:hover {
+    transform: scale(1.2);
+}
+
+.copyright {
+    margin-top: 20px;
+    font-size: 12px;
+    color: #999;
+}
+
+.footer .title-line {
+    margin: 20px auto;
+    width: 100px;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
