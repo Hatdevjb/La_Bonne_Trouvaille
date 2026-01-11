@@ -42,6 +42,7 @@
                                 <span>Déconnexion</span>
                             </a>
                         </li>
+
                     <?php else: ?>
                         <li class="nav-item">
                             <a class="nav-link user-link" href="index.php?action=connexion">
