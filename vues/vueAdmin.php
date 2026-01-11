@@ -23,7 +23,7 @@
                 <td>
                     <a href="index.php?action=admin&supprimer_id=<?php echo $user['id_utilisateur']; ?>" 
                        class="lien-supprimer"
-                       onclick="return confirm('Supprimer cet utilisateur ?')">
+                       onclick="return confirm('Supprimer cet utilisateur et ses annonces ?')">
                        Supprimer
                     </a>
                 </td>
