@@ -1,0 +1,558 @@
+/* ================================
+   VARIABLES ET RÉINITIALISATION
+   ================================ */
+
+:root {
+    --primary-color: #EC5A13 ;
+    --primary-dark: #E55100;
+    --secondary-color: #333333;
+    --light-bg: #F5F5F5;
+    --white: #FFFFFF;
+    --text-primary: #333333;
+    --text-secondary: #666666;
+    --border-color: #E0E0E0;
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    color: var(--text-primary);
+    background-color: var(--light-bg);
+    line-height: 1.6;
+}
+
+/* ================================
+   NAVBAR
+   ================================ */
+
+.navbar {
+    background-color: var(--white) !important;
+    box-shadow: var(--shadow);
+    border-bottom: 1px solid var(--border-color);
+    padding: 10px 0;
+}
+
+.navbar-brand img {
+    max-height: 100px;
+    width: auto;
+    transition: var(--transition);
+}
+
+.navbar-brand:hover img {
+    transform: scale(1.05);
+}
+
+.navbar-nav {
+    gap: 0;
+}
+
+.navbar-nav .nav-link {
+    color: var(--text-primary) !important;
+    font-weight: 600;
+    padding: 8px 16px !important;
+    transition: var(--transition);
+    border-bottom: 3px solid transparent;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--primary-color) !important;
+    border-bottom-color: var(--primary-color);
+}
+
+/* User Bar - Section utilisateur */
+.user-bar {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.user-section,
+.favorites-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.user-link,
+.favorites-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: var(--transition);
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+
+.user-link:hover,
+.favorites-link:hover {
+    color: var(--primary-color);
+    background-color: rgba(255, 102, 0, 0.05);
+}
+
+.user-link i,
+.favorites-link i {
+    font-size: 24px;
+    color: var(--primary-color);
+}
+
+.user-link span,
+.favorites-link span {
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+/* ================================
+   CALL TO ACTION
+   ================================ */
+
+.call-to-action {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    color: var(--white);
+    padding: 60px 20px;
+    margin: 20px 0;
+}
+
+.cta-content {
+    max-width: 600px;
+}
+
+.cta-title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 24px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button {
+    background-color: var(--white);
+    color: var(--primary-color);
+    border: none;
+    padding: 14px 40px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.cta-button:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ================================
+   SECTION TROUVAILLES
+   ================================ */
+
+.trouvailles-moment {
+    padding: 40px 0;
+    background-color: var(--white);
+    margin: 20px 0;
+}
+
+.selectionGenre {
+    padding: 40px 20px !important;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.genre-title-container {
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.genre-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.title-line {
+    flex: 1;
+    height: 2px;
+    background-color: var(--border-color);
+}
+
+/* ================================
+   CARTES D'ANNONCES
+   ================================ */
+
+.Annonce-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.Annonce-card {
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.Annonce-card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    transform: translateY(-4px);
+}
+
+.annonce-title {
+    padding: 12px 16px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+    height: 45px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+.Annonce-card a {
+    display: block;
+    overflow: hidden;
+    background-color: var(--light-bg);
+    height: 200px;
+}
+
+.Annonce-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.blur-annonce {
+    filter: blur(10px);
+}
+
+.Annonce-card:hover .Annonce-img {
+    transform: scale(1.05);
+}
+
+.Annonce-info {
+    padding: 16px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-top: 1px solid var(--border-color);
+}
+
+.annonce-date,
+.annonce-prix,
+.annonce-description {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.annonce-date span,
+.annonce-prix span,
+.annonce-description span {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.annonce-prix {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.annonce-prix span {
+    color: var(--primary-color);
+    font-size: 18px;
+}
+
+.annonce-description {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: 12px;
+}
+
+
+/* ================================
+   DÉTAIL ANNONCE
+   ================================ */
+
+.detail-annonce-section {
+    min-height: 80vh;
+    background-color: var(--light-bg);
+}
+
+.annonce-detail-card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.annonce-detail-card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.annonce-image-container {
+    max-height: 500px;
+    overflow: hidden;
+    background-color: #e9ecef;
+}
+
+.annonce-detail-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.annonce-detail-titre {
+    font-size: 2rem;
+    color: var(--text-primary);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.annonce-detail-prix {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.annonce-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 1rem;
+}
+
+.annonce-meta {
+    padding: 0.75rem 1rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.annonce-meta small {
+    color: var(--text-secondary);
+}
+
+.description-title {
+    color: var(--text-primary);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.card-text {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
+
+.annonce-actions {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.annonce-actions .btn {
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    transition: var(--transition);
+}
+
+/* ================================
+   AJOUT ANNONCE
+   ================================ */
+
+.ajout-annonce-section {
+    min-height: 60vh;
+    background-color: var(--light-bg);
+}
+
+.ajout-annonce-container {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+.ajout-titre {
+    color: var(--text-primary);
+    font-weight: 700;
+    border-bottom: 3px solid var(--primary-color);
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.formulaire-annonce .form-label {
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+}
+
+.formulaire-annonce .form-control {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 0.75rem;
+    transition: var(--transition);
+    font-size: 1rem;
+}
+
+.formulaire-annonce .form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(236, 90, 19, 0.25);
+}
+
+.formulaire-annonce textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.formulaire-annonce .form-text {
+    display: block;
+    margin-top: 0.5rem;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* ================================
+   FOOTER
+   ================================ */
+
+.footer {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.footer-logo img {
+    max-height: 80px;
+    width: auto;
+    margin-bottom: 20px;
+}
+
+.footer p {
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.Mention {
+    margin: 15px 0;
+}
+
+.reseaux {
+    margin: 15px 0;
+}
+
+.reseaux a {
+    color: var(--primary-color);
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 18px;
+    transition: var(--transition);
+}
+
+.reseaux a:hover {
+    transform: scale(1.2);
+}
+
+.copyright {
+    margin-top: 20px;
+    font-size: 12px;
+    color: #999;
+}
+
+.footer .title-line {
+    margin: 20px auto;
+    width: 100px;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ================================
+   RESPONSIVE
+   ================================ */
+
+@media (max-width: 768px) {
+    .navbar-brand img {
+        max-height: 60px;
+    }
+
+    .cta-title {
+        font-size: 24px;
+    }
+
+    .genre-title {
+        font-size: 22px;
+    }
+
+    .Annonce-cards-container {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 12px;
+    }
+
+    .Annonce-img {
+        height: 150px;
+    }
+
+    .user-bar {
+        gap: 12px;
+    }
+
+    .user-link span,
+    .favorites-link span {
+        font-size: 10px;
+    }
+
+    .user-link i,
+    .favorites-link i {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .Annonce-cards-container {
+        grid-template-columns: 1fr;
+    }
+
+    .genre-title-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .title-line {
+        width: 50px;
+    }
+
+    .cta-title {
+        font-size: 20px;
+    }
+}
